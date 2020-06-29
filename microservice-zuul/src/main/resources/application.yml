@@ -1,0 +1,23 @@
+server:
+  port: 9527 #服务端口
+spring:
+  application:
+    name: ZUUL-SERVER   #Zuul网关在Eureka的服务名称，随便取
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/   #注册到Eureka的地址，与服务端的配置保持一致
+zuul:
+#  routes:
+#    provider.serviceId: TEST-PROVIDER   #没有提示，自己取名称，值为服务的名称
+#    provider.path: /zuulproxy/**        #匹配指定的路径，资源匹配的路径才会拦截，转发
+  ignored-services: "*"                 #忽略直接使用服务名，*忽略所有服务
+  prefix: /server                       #统一给访问前缀
+  routes:
+    provider-route:
+      service-id: TEST-PROVIDER   #没有提示，自己取名称，值为服务的名称
+      path: /zuulproxy/**        #匹配指定的路径，资源匹配的路径才会拦截，转发
+    consumer-route:
+      service-id: TEST-CONSUMER   #没有提示，自己取名称，值为服务的名称
+      path: /zuulproxy/**        #匹配指定的路径，资源匹配的路径才会拦截，转发
+

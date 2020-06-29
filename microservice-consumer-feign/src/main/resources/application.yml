@@ -1,8 +1,8 @@
 server:
-  port: 8081 #服务端口
+  port: 9002 #服务端口
 spring:
   application:
-    name: TEST-PROVIDER    #服务名称，随意取
+    name: FEIGN-CONSUMER   #feign consumer在Eureka的服务名称，随便取
 eureka:
   client:
     service-url:

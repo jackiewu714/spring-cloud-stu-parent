@@ -18,6 +18,9 @@
         <module>spring-boot-redis</module>
         <module>microservice-product</module>
         <module>microservice-order</module>
+        <module>microservice-eureka-server</module>
+        <module>microservice-zuul</module>
+        <module>microservice-consumer-feign</module>
     </modules>
 
     <properties>
@@ -28,7 +31,8 @@
         <!--spring依赖版本控制（和spring-boot-parent版本保持一致）-->
         <org.springframework.version>5.1.7.RELEASE</org.springframework.version>
         <!--spring-boot-parent版本号，通过spring-boot管理其他第三方依赖版本-->
-        <spring.boot.version>2.1.5.RELEASE</spring.boot.version>
+        <spring.boot.version>2.0.5.RELEASE</spring.boot.version>
+        <spring.cloud.version>Finchley.SR1</spring.cloud.version>
         <jackson.version>2.9.5</jackson.version>
         <spring.security.version>5.1.5.RELEASE</spring.security.version>
         <fastjson.version>1.2.49</fastjson.version>
@@ -48,6 +52,14 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

@@ -1,2 +1,9 @@
 server:
   port: 8082 #服务端口
+spring:
+  application:
+    name: TEST-CONSUMER   #服务名称，随便取
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/ #注册到Eureka的地址，与服务端的配置保持一致
